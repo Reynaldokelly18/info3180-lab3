@@ -70,9 +70,6 @@ def page_not_found(error):
 
 @app.route("/contact", methods=["GET","POST"])
 def contact():
-    app.logger.debug(app.config["MAIL_USERNAME"])
-    app.logger.debug(app.config["MAIL_PORT"])
-    app.logger.debug(app.config["MAIL_PASSWORD"])
     formobject = ContactForm()
     if request.method == "POST":
         if formobject.validate_on_submit():
